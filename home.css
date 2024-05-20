@@ -1,0 +1,817 @@
+body {
+  margin-top: 40px;
+}
+
+
+.border {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #483D8B; /* Устанавливаем цвет бордера */
+  border-radius: 5px;
+}
+
+.logo {
+  flex: 1; /* Логотип занимает всю доступную ширину слева */
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333; /* Цвет текста логотипа */
+}
+
+.elements {
+  flex: 2; /* Элементы занимают две части доступной ширины справа */
+  display: flex;
+  justify-content: flex-end; /* Элементы выравниваются по правому краю */
+}
+
+.elements a {
+  text-decoration: none;
+  color: #333; /* Цвет текста элементов */
+  margin-left: 20px; /* Отступ между элементами */
+}
+
+.tt1 {
+  margin-right: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .border {
+    flex-direction: column; /* Переключаемся на вертикальное расположение на маленьких экранах */
+  }
+
+  .elements {
+    justify-content: flex-start; /* Элементы выравниваются по левому краю на маленьких экранах */
+    margin-top: 10px; /* Отступ сверху для элементов на маленьких экранах */
+  }
+
+  .elements a {
+    margin-left: 0; /* Убираем отступ между элементами на маленьких экранах */
+    margin-bottom: 10px; /* Добавляем отступ между элементами на маленьких экранах */
+  }
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.container1 {
+  display: flex;
+  align-items: center;
+  max-width: 100%; /* Добавляем максимальную ширину, чтобы контейнер не выходил за пределы экрана */
+}
+
+.p1 {
+  width: 100%; /* Меняем ширину на 100%, чтобы текст занимал всю доступную ширину */
+  height: auto; /* Автоматический расчет высоты в зависимости от контента */
+  font-style: italic;
+  font-size: 25px; /* Используем относительные единицы для адаптивного размера шрифта */
+}
+
+.row {
+  width: 100%; /* Меняем ширину на 100%, чтобы контейнер был адаптивным */
+  height: auto; /* Автоматический расчет высоты в зависимости от контента */
+}
+
+.container1 h1 {
+  width: 210px;
+  font-size: 23px; /* Используем относительные единицы для адаптивного размера шрифта */
+  font-style: italic;
+}
+
+.button1, .button2 {
+  margin: 5px;
+  padding: 7px 7px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: black;
+  text-decoration: none;
+  border: 1px solid #000000; /* Устанавливаем цвет бордера */
+  border-radius: 5px;
+  font-style: italic;
+}
+
+.button1.active, .button2.active {
+  background-color: #fedd60;
+  color: rgb(0, 0, 0);
+}
+
+.owl-carousel {
+  width: 50%;
+  height: 160px;
+  margin: auto;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  gap: 10px;
+  display: none;
+}
+
+.owl-carousel.active {
+  display: flex; /* Показываем активный список */
+}
+
+.image-wrapper {
+  width: 120px;
+  height: 140px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  flex: 0 0 auto;
+  text-align: center;
+  text-decoration: none; /* Убираем подчеркивание */
+  color: #000; /* Меняем цвет текста */
+}
+
+.my-image {
+  width: 70px;
+  height: 70px;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .owl-carousel {
+    width: 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  .owl-carousel {
+    width: 90%;
+  }
+
+  .image-wrapper {
+    width: 100px;
+    height: 120px;
+  }
+
+  .my-image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .owl-carousel {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    width: 80px;
+    height: 100px;
+  }
+
+  .my-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-wrapper {
+    width: 70px;
+    height: 90px;
+  }
+
+  .my-image {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.styles_container_1aK_3 {
+  margin: auto;
+  width: 70%; /* Изменил ширину контейнера на 90% */
+  max-width: 945px; /* Добавил максимальную ширину контейнера */
+  height: auto; /* Изменил высоту на auto для адаптивности */
+  border: 1px solid rgba(0, 0, 0, .3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 40px;
+  justify-content: space-around;
+}
+
+.image {
+  width: 300px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+}
+
+.image-container {
+  position: relative;
+  margin: 15px;
+  width: 30%; /* Изменил ширину кружков на 30% */
+  max-width: 150px; /* Добавил максимальную ширину для кружков */
+  flex: 1 1 auto; /* Добавил flex свойства для адаптивности */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto; /* Изменил высоту на auto для сохранения пропорций */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.styles_list_26QlZ {
+  width: 300px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.styles_listElement_3MSTa {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.nigga {
+  background-color: #fedd60;
+  border: 1px solid rgba(0, 0, 0, .3);
+  border-radius: 5px;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.content-desktop {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
+}
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку при необходимости */
+  justify-content: center; /* Выравнивание элементов по центру */
+}
+
+.list-box {
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  width: 200px; /* Ширина блока */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.list-icon {
+  text-align: center;
+}
+
+.list-icon img {
+  max-width: 80px; /* Максимальная ширина изображения */
+  height: auto;
+}
+
+.small-title {
+  margin-top: 10px;
+  font-size: 18px; /* Уменьшаем размер заголовка */
+}
+
+.advantages-text {
+  margin-top: 10px;
+  font-size: 14px; /* Уменьшаем размер текста */
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 768px) {
+  .list-box {
+    width: 100%; /* Для мобильных устройств ширина блока будет 100% */
+    margin: 10px 0; /* Уменьшаем вертикальные отступы */
+  }
+}
+
+.doctor-faq__inner {
+  width: 100%; /* Чтобы контейнер растягивался по ширине экрана */
+  max-width: 925px; /* Максимальная ширина контейнера */
+  margin: 0 auto;
+  padding: 80px 0 64px;
+}
+
+/* Стили для заголовка */
+.doctor-faq__title {
+  margin: 0;
+  margin-bottom: 24px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Стили для списка вопросов */
+.doctor-faq__items {
+  position: relative;
+  z-index: 1;
+}
+
+/* Стили для каждого вопроса */
+.doctor-faq__item {
+  position: relative;
+  margin-bottom: 24px; /* Увеличил отступ между вопросами для лучшей читаемости */
+}
+
+/* Стили для заголовка вопроса */
+.doctor-faq__item-title {
+  margin-bottom: 1px;
+  font-size: 24px; /* Уменьшил размер шрифта для лучшей читаемости на мобильных устройствах */
+  font-weight: 500;
+  cursor: pointer;
+  color: #007fff;
+}
+
+/* Стили для блока с ответом на вопрос */
+.doctor-faq__item-text-wrap {
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-height: 0;
+  padding-right: 100px;
+  font-size: 18px; /* Уменьшил размер шрифта для лучшей читаемости на мобильных устройствах */
+  line-height: 1.5; /* Увеличил межстрочный интервал для лучшей читаемости */
+  opacity: 0;
+}
+
+/* Стили для кнопки "Другие вопросы и ответы" */
+.doctor-faq__link {
+  margin-top: 20px;
+  font-size: 24px; /* Уменьшил размер шрифта для лучшей читаемости на мобильных устройствах */
+  font-weight: 500;
+  cursor: pointer;
+  color: #007fff;
+  text-decoration: none;
+}
+
+/* Медиа-запросы для адаптивности */
+@media only screen and (max-width: 768px) {
+  .doctor-faq__item-title {
+      font-size: 20px; /* Уменьшил размер шрифта для лучшей читаемости на мобильных устройствах */
+  }
+  
+  .doctor-faq__item-text-wrap {
+      font-size: 16px; /* Уменьшил размер шрифта для лучшей читаемости на мобильных устройствах */
+  }
+}
+
+.wrapper {
+  clear: both;
+  overflow: hidden;
+  width: 50%;
+  padding: 0 40px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 80px;
+  margin: 0 auto;
+}
+
+.content {
+width: 90%;
+max-width: 925px;
+margin: 0 auto;
+}
+
+.information-consultations-card {
+position: relative;
+margin-bottom: 115px;
+padding: 106px 69px 26px 0;
+border-radius: 4px;
+background-color: #fff;
+}
+
+.information-consultations-card .consultations-title {
+margin-bottom: 34px;
+}
+
+.information-consultations-card .info-list {
+width: 90%;
+max-width: 420px;
+margin: 0;
+margin-bottom: 28px;
+padding: 0;
+list-style: none;
+}
+
+.information-consultations-card .info-list-item {
+position: relative;
+margin-bottom: 12px;
+padding-left: 25px;
+font-size: 16px;
+line-height: 1.25;
+}
+
+.information-consultations-card .price-info {
+margin: 0;
+margin-bottom: 12px;
+font-size: 16px;
+line-height: 1.25;
+}
+
+.information-consultations-card .start-button {
+margin-top: 8px;
+}
+.start-button {
+display: inline-block;
+margin: 0;
+padding: 17px 34px;
+font-family: YS Text;
+font-size: 16px;
+line-height: 1.15;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+color: #000;
+border: none;
+border-radius: 4px;
+outline: none;
+background-color: #ffdc60;
+-webkit-transition: .3s;
+transition: .3s;
+}
+
+.information-consultations-card .stethoscope-image {
+position: absolute;
+right: -40px;
+bottom: -25px;
+width: 380px;
+}
+img {
+border-style: none;
+}
+
+
+.footer {
+background-color: #f4f4f4;
+padding: 40px 20px;
+margin-top: 40px;
+}
+
+.footer__addr {
+margin-bottom: 20px;
+}
+
+.footer__logo {
+font-size: 24px;
+color: #333;
+}
+
+.footer__nav {
+display: flex;
+justify-content: space-between;
+}
+
+.nav__item {
+margin-right: 20px;
+}
+
+.nav__title {
+font-size: 18px;
+color: #555;
+margin-bottom: 10px;
+}
+
+.nav__ul {
+list-style-type: none;
+padding: 0;
+}
+
+.nav__ul li {
+margin-bottom: 5px;
+}
+
+.footer__btn {
+display: inline-block;
+padding: 8px 16px;
+background-color: #007bff;
+color: #fff;
+text-decoration: none;
+border-radius: 4px;
+}
+
+.legal {
+margin-top: 20px;
+font-size: 14px;
+color: #777;
+}
+
+.heart {
+color: #ff0000;
+}
+
+/* Медиа-запрос для адаптивности */
+@media screen and (max-width: 768px) {
+.footer__addr {
+  text-align: center;
+}
+
+.footer__nav {
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav__item {
+  margin-right: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+}
+
+
+
+/* Стили для блока с градиентным фоном */
+.gradient-overlay {
+  margin: 0 auto;
+  width: 40%;
+  margin-top: 40px;
+  border: 2px solid rgb(0, 0, 0);
+  color: #000000;
+  text-align: center;
+  border-radius: 80px;
+}
+
+/* Стили для содержимого блока с градиентным фоном */
+.content h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Стили для списка сдачи тестов */
+.test_lists {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.edit_test_list {
+  list-style-type: none;
+  padding: 0;
+  border: 2px solid #e6e21b; /* Толщина 2px, цвет синий */
+  border-radius: 10px; /* Закругленные углы */
+  max-width: 400px; /* Максимальная ширина блока */
+  margin: 0 auto; /* Центрируем блок на странице */
+  padding: 10px; /* Поля внутри блока */
+  background-color: #f8f9fa; /* Цвет фона */
+  list-style-type: none; /* Убираем маркеры у списка */
+  padding: 0; /* Убираем отступы */
+}
+
+.edit_test_list h4 {
+  font-size: 18px; /* Размер шрифта заголовка */
+  color: #333; /* Цвет текста */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.edit_test_list li {
+  margin-bottom: 5px; /* Отступ между элементами списка */
+  margin-left: 40px;
+}
+
+.edit_test_list a {
+  text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+
+.edit_test_list a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
+/* Стили для ссылок и кнопок */
+.custom-link,
+.custom-button {
+  background-color: #FF4E00;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-link:hover,
+.custom-button:hover {
+  background-color: #FF6100;
+}
+
+/* Стили для текстового поля */
+.custom-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+a,
+a:active,
+a:focus {
+  color: #333;
+  text-decoration: none;
+  transition-timing-function: ease-in-out;
+  -ms-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+section {
+  padding: 60px 0;
+  /* min-height: 100vh;*/
+}
+.btn {
+  padding: 14px 25px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.red-btn {
+  background: #ed1b24;
+  border: 2px solid #ed1b24;
+  color: #fff;
+}
+
+.red-btn:hover {
+  background: #1c376c;
+  color: #fff;
+  border-color: #ffffff;
+}
+
+/*---------footer---------*/
+/* Основные стили для футера */
+footer {
+  padding: 50px 0;
+  color: #333;
+}
+
+/* Стили для верхней части футера */
+.footer-top {
+  margin-bottom: 30px;
+}
+
+.about-footer h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.about-footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-footer ul li {
+  margin-bottom: 10px;
+}
+
+/* Стили для кнопки "Book Now" */
+.btn.red-btn {
+  background-color: #FF4E00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.red-btn:hover {
+  background-color: #FF6100;
+}
+
+/* Стили для ссылок в футере */
+.footer-top a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-top a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для заголовков в футере */
+.footer-title h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Стили для списка страниц в футере */
+.page-more-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.page-more-info ul li {
+  margin-bottom: 10px;
+}
+
+/* Стили для социальных иконок */
+.footer-social {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.footer-social li {
+  display: inline-block;
+}
+
+.footer-social li a {
+  color: #333;
+  font-size: 20px;
+}
+
+/* Стили для таблицы с часами работы */
+.open-hours table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.open-hours table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.open-hours table td i {
+  margin-right: 5px;
+  color: #000000;
+}
+
+/* Стили для логотипов в футере */
+.footer-logo table {
+  width: 100%;
+}
+
+.footer-logo table td {
+  padding: 10px;
+}
+
+/* Стили для нижней части футера */
+.footer-bottom {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.col-sm-4 {
+  height: 70px;
+  display: flex;
+  text-align: center; /* Центрируем текст по горизонтали */
+}
+
+.caption {
+  text-align: center; /* Центрируем текст по горизонтали */
+  transform: translate(0%, 35%);
+  font-size: 16px;
+  color: #333; /* Цвет текста подписи */
+}

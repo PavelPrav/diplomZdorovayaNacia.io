@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stranica.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+    <div class="border">
+        <div class="logo">
+          <a href="/">
+            Здоровая Нация
+          </a>
+        </div>
+    
+        <div class="elements">
+          <a
+            href="https://market.yandex.kz/catalog--lekarstvennye-preparaty-i-bad/72412/list?hid=15754673&rs=eJxFUC8LwlAcfHOCRey2h8FiM6mbOL-AqMUg6L6AwazIsJhEjILhYdMoGPyHAzEqCCaDLPrvA1gEd1csx3H32927Jbt6UTtoQjSyPtoDw0fnbfoov2sfLc2gDsUNAj0F3alBl3sozhBoxzbgTbjqQWUNLpfgIgVXTqlcwa0q0K2wVzJnDNc7gasV0Dou4QZw48x5c0Wvau3gijR4nvl1ugu2FHh_44oIeY8tRbieDu6WuKKPNK_D136ZcCE_w3VHXL3IQJmZ_8wXvhJ39iaoxLdAk_8nxPwwV0yoRLnliXbV5n2Z7_ygxc4ZP7fNhvk%2C&allowCollapsing=1&local-offers-first=0&connected-retail=goodsCentricSearch"
+            class="tt1"
+          >
+            Лекарства
+          </a>
+          <a href="{% url 'results' %}">Результаты</a>
+          <a href="{% url 'fq' %}">Заболевания</a>
+          <a href="{% url 'deauth' %}">Выйти</a>
+        </div>
+      </div>
+    
+        <div class="foxx">
+            <h1>Боль в горле</h1>
+        </div>
+    <div class="container">
+        <div class="box">
+            <h2>Последствия травм</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Проблемы с зубами</h2>
+            <a href="{% url 'migr' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Головная боль</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Простуда</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Аллергия</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Кожные заболевания</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Детские инфекции</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Беспокойный сон</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Проблемы с животом</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Простуда</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Сыпь у ребенка</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+        <div class="box">
+            <h2>Физическое развитие</h2>
+            <a href="{% url 'parck' %}">Результаты</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-md-6 col-lg-2 page-more-info">
+                        <div class="footer-title">
+                            <h4>Контактная информация</h4>
+                        </div>
+                        <ul>
+                            <li><a href="#">Наши контакты</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Testimonial</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-4 open-hours">
+                        <div class="footer-title">
+                            <h4>График работы</h4>
+                            <ul class="footer-social">
+                            </ul>
+                        </div>
+                        <table class="table" style="color:#000000">
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa fa-clock-o"></i>Понедельник</td>
+                                    <td>9:00am - 5:00pm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-clock-o"></i>Вторник</td>
+                                    <td>9:00am - 4:00pm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-clock-o"></i>Среда</td>
+                                    <td>9:00am - 1:30pm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-clock-o"></i>Четверг</td>
+                                    <td>9:30am - 12:00pm</td>
+                                </tr>
+                                <tr>
+                                  <td><i class="fa fa-clock-o"></i>Пятница</td>
+                                  <td>9:30am - 12:00pm</td>
+                                </tr>
+  
+                                <tr>
+                                  <td><i class="fa fa-clock-o"></i>Суббота</td>
+                                  <td>9:30am - 24:00pm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <div class="footer-logo">
+    
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><img src="https://avatars.mds.yandex.net/i?id=8e1e57f543183ef20c96b4c287459d8d34093048-7745047-images-thumbs&n=13"></td>
+                                    <td><img src="https://avatars.mds.yandex.net/i?id=804565cd19fca967493c03e16e163eb1b22cba50-10350650-images-thumbs&n=13"></td>
+                                    <td><img src="https://avatars.mds.yandex.net/i?id=4f78e7debd0eb83e03c7431a4a0fbb1e7dd42835-9065994-images-thumbs&n=13"></td>
+                                    <td><img src="https://avatars.mds.yandex.net/i?id=8eb14869dd08e172a5b634178a48c0fc9d18ad5c-10113106-images-thumbs&n=13"></td>
+                                    <td><img src="https://avatars.mds.yandex.net/i?id=32ad3b7a0c7669df285e59f8a572ac755d7e8fce-4859870-images-thumbs&n=13"></td>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="https://canadianmidwives.org/sites/canadianmidwives.org/wp-content/uploads/2019/03/midwife-icons-x4.jpg" alt="Здоровая Нация">
+                        <div class="caption">Здоровая Нация</div>
+                    </div>
+                    <div class="col-sm-8">
+                        <p>Lorem ipsum dolor sit amet @ 2019 All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

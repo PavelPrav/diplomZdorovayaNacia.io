@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ test.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <a href="{% url 'home' %}">На главную</a>
+        </div>
+    </header>
+
+    <div class="container add_question_form">
+
+        <form class="add_question" action="{% url 'add_question' test.id %}" method="POST">
+            <textarea name="question" placeholder="Введите вопрос"></textarea>
+            {% for letter in 'abcd' %}
+                <p>
+                    <textarea name="answer_{{ letter }}" placeholder="{{letter|upper}}"></textarea>
+                    <input type="checkbox" name="correct_{{ letter }}">
+                </p>
+            {% endfor %}
+            <input type="submit" value="Добавить">
+            {% csrf_token %}
+        </form>
+    </div>
+
+    <h1 class="test_title">
+        {{ test.title }}
+    </h1>
+    <div class="questions">
+        {% for question in questions %}
+            <h5>{{ question.title }}</h5>
+            <div class="answers">
+                {% for answer in question.answers.all %}
+                    <p 
+                    {% if answer.correct %}
+                        style="color: green"
+                    {% else %}
+                        style="color: red"
+                    {% endif %}
+                    >
+                     {{ answer.description }}
+                    </p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+</body>
+</html>

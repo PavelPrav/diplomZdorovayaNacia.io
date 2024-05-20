@@ -1,0 +1,98 @@
+<!-- myapp/templates/base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <!-- Ваши общие стили и скрипты могут быть добавлены здесь -->
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var buttons = document.querySelectorAll('.button1, .button2');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var listId = this.getAttribute('data-list-id');
+                showList(listId);
+            });
+        });
+    
+        // Изначально показываем список для взрослых
+        showList('list1');
+    });
+    
+    function showList(listId) {
+        var lists = document.querySelectorAll('.owl-carousel');
+        lists.forEach(function(list) {
+            list.classList.remove('active');
+        });
+    
+        var buttons = document.querySelectorAll('.button1, .button2');
+        buttons.forEach(function(button) {
+            button.classList.remove('active');
+        });
+    
+        var list = document.getElementById(listId);
+        if (list) {
+            list.classList.add('active');
+    
+            var correspondingButton = document.querySelector('[data-list-id="' + listId + '"]');
+            if (correspondingButton) {
+                correspondingButton.classList.add('active');
+            }
+        }
+    }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var itemTitles = document.querySelectorAll('.doctor-faq__item-title');
+      
+          itemTitles.forEach(function(title) {
+              title.addEventListener('click', function() {
+                  var itemTextWrap = this.nextElementSibling;
+                  if (itemTextWrap.style.maxHeight) {
+                      itemTextWrap.style.maxHeight = null;
+                      itemTextWrap.style.opacity = 0;
+                  } else {
+                      itemTextWrap.style.maxHeight = itemTextWrap.scrollHeight + "px";
+                      itemTextWrap.style.opacity = 1;
+                  }
+              });
+          });
+      });
+    </script>
+
+    
+  <div class="border">
+    <div class="logo">
+      <a href="/">
+        Здоровая Нация
+      </a>
+    </div>
+
+    <div class="elements">
+      <a
+        href="https://market.yandex.kz/catalog--lekarstvennye-preparaty-i-bad/72412/list?hid=15754673&rs=eJxFUC8LwlAcfHOCRey2h8FiM6mbOL-AqMUg6L6AwazIsJhEjILhYdMoGPyHAzEqCCaDLPrvA1gEd1csx3H32927Jbt6UTtoQjSyPtoDw0fnbfoov2sfLc2gDsUNAj0F3alBl3sozhBoxzbgTbjqQWUNLpfgIgVXTqlcwa0q0K2wVzJnDNc7gasV0Dou4QZw48x5c0Wvau3gijR4nvl1ugu2FHh_44oIeY8tRbieDu6WuKKPNK_D136ZcCE_w3VHXL3IQJmZ_8wXvhJ39iaoxLdAk_8nxPwwV0yoRLnliXbV5n2Z7_ygxc4ZP7fNhvk%2C&allowCollapsing=1&local-offers-first=0&connected-retail=goodsCentricSearch"
+        class="tt1"
+      >
+        Лекарства
+      </a>
+      <a href="signup" class="tt1"> Онлайн консультация </a>
+      <a href="/signup" id="tt3">
+        Вход в аккаунт
+      </a>
+    </div>
+  </div>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Ваши общие элементы подвала могут быть добавлены здесь -->
+    </footer>
+</body>
+</html>

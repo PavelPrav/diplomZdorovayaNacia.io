@@ -1,0 +1,407 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя страница</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var buttons = document.querySelectorAll('.button1, .button2');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var listId = this.getAttribute('data-list-id');
+                showList(listId);
+            });
+        });
+    
+        // Изначально показываем список для взрослых
+        showList('list1');
+    });
+    
+    function showList(listId) {
+        var lists = document.querySelectorAll('.owl-carousel');
+        lists.forEach(function(list) {
+            list.classList.remove('active');
+        });
+    
+        var buttons = document.querySelectorAll('.button1, .button2');
+        buttons.forEach(function(button) {
+            button.classList.remove('active');
+        });
+    
+        var list = document.getElementById(listId);
+        if (list) {
+            list.classList.add('active');
+    
+            var correspondingButton = document.querySelector('[data-list-id="' + listId + '"]');
+            if (correspondingButton) {
+                correspondingButton.classList.add('active');
+            }
+        }
+    }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var itemTitles = document.querySelectorAll('.doctor-faq__item-title');
+      
+          itemTitles.forEach(function(title) {
+              title.addEventListener('click', function() {
+                  var itemTextWrap = this.nextElementSibling;
+                  if (itemTextWrap.style.maxHeight) {
+                      itemTextWrap.style.maxHeight = null;
+                      itemTextWrap.style.opacity = 0;
+                  } else {
+                      itemTextWrap.style.maxHeight = itemTextWrap.scrollHeight + "px";
+                      itemTextWrap.style.opacity = 1;
+                  }
+              });
+          });
+      });
+    </script>
+    <div class="border">
+        <div class="logo">
+          <a href="/">
+            Здоровая Нация
+          </a>
+        </div>
+    
+        <div class="elements">
+          <a
+            href="https://market.yandex.kz/catalog--lekarstvennye-preparaty-i-bad/72412/list?hid=15754673&rs=eJxFUC8LwlAcfHOCRey2h8FiM6mbOL-AqMUg6L6AwazIsJhEjILhYdMoGPyHAzEqCCaDLPrvA1gEd1csx3H32927Jbt6UTtoQjSyPtoDw0fnbfoov2sfLc2gDsUNAj0F3alBl3sozhBoxzbgTbjqQWUNLpfgIgVXTqlcwa0q0K2wVzJnDNc7gasV0Dou4QZw48x5c0Wvau3gijR4nvl1ugu2FHh_44oIeY8tRbieDu6WuKKPNK_D136ZcCE_w3VHXL3IQJmZ_8wXvhJ39iaoxLdAk_8nxPwwV0yoRLnliXbV5n2Z7_ygxc4ZP7fNhvk%2C&allowCollapsing=1&local-offers-first=0&connected-retail=goodsCentricSearch"
+            class="tt1"
+          >
+            Лекарства
+          </a>
+          <a href="{% url 'results' %}">Результаты</a>
+          <a href="{% url 'fq' %}">Заболевания</a>
+          <a href="https://t.me/Regist_bot_ZdorovNac_bot">Запись</a>
+          <a href="{% url 'deauth' %}">Выйти</a>
+        </div>
+      </div>
+    <div class="container">
+      <div class="row">
+          <div class="p1">
+              Онлайн-консультация с врачами
+          </div>
+          <div class="container1">
+            <h1>Популярные темы:</h1>
+            <a href="#" class="button1 active" data-list-id="list1">Взрослые</a>
+            <a href="#" class="button2" data-list-id="list2">Дети</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="owl-carousel active" id="list1">
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144970/20180305_3_telemed_topic_small_bitter_taste_2.0/orig" class="my-image" alt="Боль в горле">
+          <div class="image-caption">Боль в горле</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144649/20180305_3_telemed_topic_small_lumbar_region_pain_2.0/orig" class="my-image" alt="Последствия травм">
+          <div class="image-caption">Последствия травм</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144970/20180305_3_telemed_topic_small_children_teething_2.0/orig" class="my-image" alt="Проблемы с зубами">
+          <div class="image-caption">Проблемы с зубами</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144970/20180305_3_telemed_topic_small_headache_2.0/orig" class="my-image" alt="Головная боль">
+          <div class="image-caption">Головная боль</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144970/20180305_3_telemed_topic_small_cold_2.0/orig" class="my-image" alt="Простуда">
+          <div class="image-caption">Простуда</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/118939/20180305_owVcFqJh_telemed_large_1_allergy_xhdpi/orig" class="my-image" alt="Аллергия">
+          <div class="image-caption">Аллергия</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144649/20180305_3_telemed_topic_small_skin_diseases_2.0/orig" class="my-image" alt="Кожные заболевания">
+          <div class="image-caption">Кожные заболевания</div>
+        </a>
+    </div>
+    
+    
+    <div class="owl-carousel" id="list2">
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144970/20180305_3_telemed_topic_small_bitter_taste_2.0/orig" class="my-image" alt="Боль в горле">
+          <div class="image-caption">Боль в горле</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144649/20180305_3_telemed_topic_small_child_infections_2.0/orig" class="my-image" alt="Детские инфенкции">
+          <div class="image-caption">Детские инфенкции</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144649/20180305_3_telemed_topic_small_child_restless_sleep_2.0/orig" class="my-image" alt="Беспокойный сон">
+          <div class="image-caption">Беспокойный сон</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/118939/20180305_3_telemed_topic_small_child_stomach_problem_2.0/orig" class="my-image" alt="Проблемы с животом">
+          <div class="image-caption">Проблемы с животом</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144970/20180305_3_telemed_topic_small_cold_2.0/orig" class="my-image" alt="Простуда">
+          <div class="image-caption">Простуда</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144649/20180305_3_telemed_topic_small_skin_diseases_children_2.0/orig" class="my-image" alt="Сыпь у ребенка">
+          <div class="image-caption">Сыпь у ребенка</div>
+        </a>
+    
+        <a href="/fq" class="image-wrapper">
+          <img src="https://avatars.mds.yandex.net/get-med/144970/20180305_3_telemed_topic_small_child_physical_lag_2.0/orig" class="my-image" alt="Физическое развитие">
+          <div class="image-caption">Физическое развитие</div>
+        </a>
+    </div>
+    
+    <div class="styles_container_1aK_3">
+      <div class="image">
+        <ul class="styles_list_26QlZ styles_compact_mXk68">
+          <li class="styles_listElement_3MSTa styles_listElement_blue_TU1vO">Персональный медицинский консультант</li>
+          <li class="styles_listElement_3MSTa styles_listElement_blue_TU1vO">Индивидуально подберем врача и запишем к нему</li>
+          <li class="styles_listElement_3MSTa styles_listElement_blue_TU1vO"><a href="#" class="nigga">Подробнее</a></li>
+      </ul>
+    </div>
+      <ul class="styles_list_26QlZ styles_compact_mXk68">
+          <li class="styles_listElement_3MSTa styles_listElement_blue_TU1vO">Подробно разберемся в Ваших жалобах</li>
+          <li class="styles_listElement_3MSTa styles_listElement_blue_TU1vO">Подберем лучшего из профильных врачей</li>
+          <li class="styles_listElement_3MSTa styles_listElement_blue_TU1vO">Запишем на очный прием к нему</li>
+          <li class="styles_listElement_3MSTa styles_listElement_blue_TU1vO">Подберем врача в рамках ОМС/ДМС или на платной основе</li>
+      </ul>
+      <div class="image-container">
+          <img src="https://avatars.mds.yandex.net/get-bunker/135516/ef98ec26e8e3dece9728920f822748985d676f65/orig" alt="Overlay Image">
+      </div>
+    </div>
+    <div class="content-desktop">
+        <div class="advantages">
+            <ul class="advantages-list">
+                <li class="list-box">
+                    <div class="list-icon">
+                        <img src="https://avatars.mds.yandex.net/get-bunker/120922/8eb539359d25f13fc94d9b01514b6f4ac2dd099f/svg" alt="Компетентные врачи">
+                    </div>
+                    <h3 class="small-title">Компетентные врачи</h3>
+                    <p class="text advantages-text">Консультируйтесь с опытными врачами, а не с форумами народной медицины.</p>
+                </li><li class="list-box">
+                    <div class="list-icon">
+                        <img src="https://avatars.mds.yandex.net/get-bunker/128809/a5b32a2fd358a86fd097f4e847bb9128890caa93/svg" alt="Компетентные врачи">
+                    </div>
+                    <h3 class="small-title">В любой момент</h3>
+                    <p class="text advantages-text">Врачи на связи круглосуточно, без предварительной записи.</p>
+                </li>
+                <li class="list-box">
+                    <div class="list-icon">
+                        <img src="https://avatars.mds.yandex.net/get-bunker/135516/8068e8964aa833546ddb8e17f98bc5c507d02ad3/svg" alt="Компетентные врачи">
+                    </div>
+                    <h3 class="small-title">Приватно</h3>
+                    <p class="text advantages-text">Врач знает о вас только то, что вы сами сообщите. Можно под псевдонимом.</p>
+                </li>
+                <li class="list-box">
+                    <div class="list-icon">
+                        <img src="https://avatars.mds.yandex.net/get-bunker/128809/a6940005870fc2f01abfaa7a4c4cc9cd265e0eed/svg" alt="Компетентные врачи">
+                    </div>
+                    <h3 class="small-title">С историей</h3>
+                    <p class="text advantages-text">После каждой консультации врач присылает вам отчёт с рекомендациями.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+     
+    <div class="doctor-faq">
+        <div class="doctor-faq__inner">
+            <h2 class="doctor-faq__title">Все ответы на вопросы о Здоровая.Нация</h2>
+            <div class="doctor-faq__items"><div class="doctor-faq__item">
+                <div class="doctor-faq__item-title">Как быстро ответит доктор?</div>
+                <div class="doctor-faq__item-text-wrap" style="">
+                    <div class="doctor-faq__item-text">Вам отвечает первый освободившийся специалист: обычно он выходит на связь в течение нескольких минут. В ожидании врача вы можете рассказать о проблеме и, если нужно, подготовить фотографии.</div>
+                </div>
+            </div>
+            <div class="doctor-faq__item">
+                <div class="doctor-faq__item-title">В каких городах работает сервис?</div>
+                <div class="doctor-faq__item-text-wrap" style="">
+                    <div class="doctor-faq__item-text">Обращаться можно из любого города Казахстана, даже если вы путешествуете за границу: достаточно иметь доступ к интернету и возможность оплатить консультацию онлайн.</div>
+                </div>
+            </div>
+            <div class="doctor-faq__item">
+                <div class="doctor-faq__item-title">Какие врачи меня консультируют?</div>
+                <div class="doctor-faq__item-text-wrap" style="">
+                    <div class="doctor-faq__item-text">Здоровая.Нация работает с практикующими врачами из Казахстанских клиник. Каждый из них прошёл несколько этапов отбора и курс обучения по дистанционному консультированию. Средний стаж специалистов — 5 лет. После общения с врачами пользователи ставят им оценки. Наш сайт продолжает сотрудничать только с теми, чей рейтинг 4,9 или больше.</div>
+                </div>
+            </div>
+            <div class="doctor-faq__item">
+                <div class="doctor-faq__item-title">А как врач поможет через интернет?</div>
+                <div class="doctor-faq__item-text-wrap">
+                    <div class="doctor-faq__item-text">Есть множество вариантов. Если вы себя плохо чувствуете, врач расспросит про недомогание и даст конкретные рекомендации: какие анализы сдать, к какому специалисту записаться, что сделать перед визитом к нему. Если у вас на руках результаты обследований или ещё какие-нибудь медицинские документы, врач поможет в них разобраться. Наконец, по видеосвязи он может разглядеть совсем тревожные симптомы — и посоветовать вам вызвать скорую помощь.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div class="content">
+            <div class="information-consultations">
+                <div class="information-consultations-card">
+                    <div class="large-title consultations-title"></div>
+                    <ul class="info-list">
+                        <li class="info-list-item">Здоровая.Нация: советуйтесь с врачом, а не с форумом</li>
+                        <li class="info-list-item">консультации квалифицированных врачей — для себя, детей и родителей</li>
+                        <li class="info-list-item">врачи на связи круглосуточно</li>
+                        <li class="info-list-item">безопасно, конфиденциально и анонимно</li>
+                        <li class="info-list-item">в чате и на видео</li><li class="info-list-item"></li>
+                        <li class="info-list-item">отчёт после каждой консультации</li>
+                    </ul>
+                    <p class="price-info"></p>
+                    <p class="price-info"></p>
+                    <a class="start-button start-consultation" href="/#choose">Выбрать специалиста</a>
+                    <img class="stethoscope-image" src="https://avatars.mds.yandex.net/get-bunker/128809/9fbc8527d8b7a73c314e171ad9a19f1f160584ac/orig" alt="Картинка стетоскопа">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gradient-overlay">
+        <div class="content">
+            <h1>Пройдите тест по состоянию вашего здоровья</h1>
+        </div>
+    </div>
+    
+    <div class="test_lists">
+        {% if user.is_admin %}
+        <ul class="edit_test_list full">
+            <h4>Добавить тест</h4>
+            <form action="{% url 'add_test' %}" method="POST">
+                <input type="text" name="title" placeholder="Наименование">
+                <input type="submit" value="Добавить">
+                {% csrf_token %}
+            </form>
+        </ul>
+        
+
+        <ul class="edit_test_list">
+            <h4>Редактирование тестов</h4>
+            {% for test in tests %}
+                    <li><a href="{% url 'get_test' test.id %}">
+                        {{test.title}}
+                    </a></li>
+            {% endfor %}
+        </ul>
+
+        {% endif %}
+    
+        <ul class="edit_test_list">
+            <h4>Оценка состояния вашего здоровья</h4>
+            {% for test in tests %}
+                    <li><a href="{% url 'complite_test_view' test.id %}">
+                        {{test.title}}-Нажмите чтобы пройти тест
+                    </a></li>
+            {% endfor %}
+        </ul>
+
+        
+    </div>
+    
+    <footer>
+      <div class="container">
+          <div class="footer-top">
+              <div class="row">
+                  <div class="col-md-6 col-lg-2 page-more-info">
+                      <div class="footer-title">
+                          <h4>Контактная информация</h4>
+                      </div>
+                      <ul>
+                          <li><a href="#">Наши контакты</a></li>
+                          <li><a href="#">About</a></li>
+                          <li><a href="#">Testimonial</a></li>
+                          <li><a href="#">Blog</a></li>
+                          <li><a href="#">Contact</a></li>
+                      </ul>
+                  </div>
+  
+                  <div class="col-md-6 col-lg-4 open-hours">
+                      <div class="footer-title">
+                          <h4>График работы</h4>
+                          <ul class="footer-social">
+                          </ul>
+                      </div>
+                      <table class="table" style="color:#000000">
+                          <tbody>
+                              <tr>
+                                  <td><i class="fa fa-clock-o"></i>Понедельник</td>
+                                  <td>9:00am - 5:00pm</td>
+                              </tr>
+                              <tr>
+                                  <td><i class="fa fa-clock-o"></i>Вторник</td>
+                                  <td>9:00am - 4:00pm</td>
+                              </tr>
+                              <tr>
+                                  <td><i class="fa fa-clock-o"></i>Среда</td>
+                                  <td>9:00am - 1:30pm</td>
+                              </tr>
+                              <tr>
+                                  <td><i class="fa fa-clock-o"></i>Четверг</td>
+                                  <td>9:30am - 12:00pm</td>
+                              </tr>
+                              <tr>
+                                <td><i class="fa fa-clock-o"></i>Пятница</td>
+                                <td>9:30am - 12:00pm</td>
+                              </tr>
+
+                              <tr>
+                                <td><i class="fa fa-clock-o"></i>Суббота</td>
+                                <td>9:30am - 24:00pm</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <hr>
+                      <div class="footer-logo">
+  
+                      <table>
+                          <tbody>
+                              <tr>
+                                  <td><img src="https://avatars.mds.yandex.net/i?id=8e1e57f543183ef20c96b4c287459d8d34093048-7745047-images-thumbs&n=13"></td>
+                                  <td><img src="https://avatars.mds.yandex.net/i?id=804565cd19fca967493c03e16e163eb1b22cba50-10350650-images-thumbs&n=13"></td>
+                                  <td><img src="https://avatars.mds.yandex.net/i?id=4f78e7debd0eb83e03c7431a4a0fbb1e7dd42835-9065994-images-thumbs&n=13"></td>
+                                  <td><img src="https://avatars.mds.yandex.net/i?id=8eb14869dd08e172a5b634178a48c0fc9d18ad5c-10113106-images-thumbs&n=13"></td>
+                                  <td><img src="https://avatars.mds.yandex.net/i?id=32ad3b7a0c7669df285e59f8a572ac755d7e8fce-4859870-images-thumbs&n=13"></td>
+                          </tbody>
+                      </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <hr>
+          <div class="footer-bottom">
+              <div class="row">
+                  <div class="col-sm-4">
+                      <img src="https://canadianmidwives.org/sites/canadianmidwives.org/wp-content/uploads/2019/03/midwife-icons-x4.jpg" alt="Здоровая Нация">
+                      <div class="caption">Здоровая Нация</div>
+                  </div>
+                  <div class="col-sm-8">
+                      <p>Lorem ipsum dolor sit amet @ 2019 All rights reserved</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  </body>
+  </html>
+</body>
+</html>

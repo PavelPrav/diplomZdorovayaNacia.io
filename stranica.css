@@ -1,0 +1,44 @@
+/* Основные стили для контейнера и блоков */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем блоки по горизонтали */
+    align-items: center; /* Центрируем блоки по вертикали */
+    margin-top: 20px;
+}
+
+.foxx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 200px;
+    height: 150px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 10px; /* Уменьшил отступы между блоками */
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовков болезней */
+.box h2 {
+    margin: 0; /* Убрал отступы вокруг заголовка */
+    color: #333;
+}
+
+/* Стили для ссылок */
+.box a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+/* При наведении на блок */
+.box:hover {
+    border-color: #007bff;
+    box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.2);
+}

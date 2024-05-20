@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сдача теста: {{ test.title }}</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="{% url 'home' %}">На главную</a>
+        </div>
+    </header>
+    
+    <form action="{% url 'complite_test_request' %}" id="complite_test_form" method="POST">
+        <input type="text" name="test_id" value="{{ test.id }}" hidden>
+        {% for question in questions %}
+            <h4 class="question_title">Вопрос: {{ question.title }}</h4> 
+            <div class="question">
+                <input type="text" name="q_{{ forloop.counter }}" value="{{ question.id }}" hidden>
+                {% for answer in question.answers.all %}
+                    <p class="answer">
+                        <label for="q_{{ forloop.parentloop.counter }}_a_{{ forloop.counter }}">{{ answer.description }}</label>
+                        <input id="q_{{ forloop.parentloop.counter }}_a_{{ forloop.counter }}" type="checkbox" name="q_{{ forloop.parentloop.counter }}_a_{{ forloop.counter }}" value="{{ answer.id }}">
+                    </p>
+                {% endfor %}
+            </div>
+            <hr>
+        {% endfor %}
+        <input type="submit" value="Сдать тест" class="button">
+        {% csrf_token %}
+    </form>
+    
+</body>
+</html>

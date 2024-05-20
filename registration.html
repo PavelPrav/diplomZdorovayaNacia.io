@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация/Авторизация</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="wrapper background-banner">
+    <div class="raspberries-background-left" style="background-image:url(https://avatars.mds.yandex.net/get-bunker/61205/4340e444e2c6332960cb8ef2ec89f83f90bb2352/orig)"></div>
+    <div class="raspberries-background-right" style="background-image:url(https://avatars.mds.yandex.net/get-bunker/128809/60b02fde0aa79632b11be4cd256f539321c92383/orig)"></div>
+
+<div class="border">
+        <div class="logo">
+          <a href="/">
+            Добро пожаловать на наш сайт онлайн-консультации Здоровая Нация
+          </a>
+        </div>
+    
+        <div class="elements">
+          <a
+            href="https://market.yandex.kz/catalog--lekarstvennye-preparaty-i-bad/72412/list?hid=15754673&rs=eJxFUC8LwlAcfHOCRey2h8FiM6mbOL-AqMUg6L6AwazIsJhEjILhYdMoGPyHAzEqCCaDLPrvA1gEd1csx3H32927Jbt6UTtoQjSyPtoDw0fnbfoov2sfLc2gDsUNAj0F3alBl3sozhBoxzbgTbjqQWUNLpfgIgVXTqlcwa0q0K2wVzJnDNc7gasV0Dou4QZw48x5c0Wvau3gijR4nvl1ugu2FHh_44oIeY8tRbieDu6WuKKPNK_D136ZcCE_w3VHXL3IQJmZ_8wXvhJ39iaoxLdAk_8nxPwwV0yoRLnliXbV5n2Z7_ygxc4ZP7fNhvk%2C&allowCollapsing=1&local-offers-first=0&connected-retail=goodsCentricSearch"
+            class="tt1"
+          >
+            Лекарства
+          </a>
+          <a href="{% url 'fq' %}">Заболевания</a>
+        </div>
+</div>
+
+<div class="container">
+        <div class="panel">
+            <form action="{% url 'authorization' %}" method="POST">
+                <input type="text" name="login" placeholder="Логин">
+                <input type="password" name="password" placeholder="Пароль">
+                <input type="submit" value="Войти">
+                {% csrf_token %}
+            </form>
+            <form action="{% url 'registration' %}" method="POST">
+                <input type="text" name="username" placeholder="Имя пользователя">
+                <input type="text" name="login" placeholder="Логин">
+                <input type="password" name="password" placeholder="Пароль">
+                <input type="password" name="r_password" placeholder="Повторите пароль">
+                <input type="submit" value="Зарегистрироваться">
+                {% csrf_token %}
+            </form>
+        </div>
+</div>
+    
+</body>
+</html>

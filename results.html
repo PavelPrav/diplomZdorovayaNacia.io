@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты тестов</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="container-glavn">
+            <a href="{% url 'home' %}">На главную</a>
+        </div>
+    </header>
+
+    <h2 class="title">Результаты: {{ user.username }}</h2>
+    <div class="tests_container">
+        {% for test in results %}
+        <p class="test_name"><span>Наименование: </span>
+            <b>
+                {{test.test.title}}
+            </b>
+        </p>
+        <p class="test_points"><span>Оценка: </span>{{test.point}}</p>
+        <p class="test_info"><span>Информация: </span>
+            {% for id, kit in answers_kits.items %}
+            <div class="res">
+                {% for kit_ in kit %}
+                <div class="ans">
+                        {% if kit_.test.id == id and kit_.question in test.test.questions.all and kit_.test.id == test.test.id %}
+                    
+                            <span>Вопрос: <b>
+                                {{ kit_.question.title }}</span><br>
+                            </b>
+                            {% if kit_.is_right %}
+                                <span style="color: green"> Ответ: {{ kit_.answer.description }}</span>
+                            {% else %}
+                                <span style="color: red"> Ответ: {{ kit_.answer.description }}</span>
+                                <!-- <span>Правильный: {{ ... }}</span> -->
+                            {% endif %}
+                        {% endif %}
+                </div>
+
+
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </p>
+        {% endfor %}
+    </div>
+    
+    <script>
+        let rows = document.querySelectorAll('.ans');
+        rows.forEach(element => {
+            console.log(element.textContent.length)
+            if (element.textContent.length <= 50){
+                element.remove();
+            }
+        });
+    </script>
+
+</body>
+</html>
